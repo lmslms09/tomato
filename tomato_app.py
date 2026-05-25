@@ -89,7 +89,7 @@ if st.button("✨ 토마토야 얼마나 자랄래? 예측해줘! ✨", use_cont
     elif predicted >= 40:
         status_emoji = "🌱 오호라! 무럭무럭 잘 자라고 있네요! 👍"
     else:
-        status_emoji = "🥺 힝, 토마토가 조금 추우거나 더운가봐요. 신경 써주세요! 💧"
+        status_emoji = "🥺 힝, 토마토가 조금 힘든가봐요 ㅠㅠ. 조금만 신경 써주세요! 💧"
         
     st.success(f"## 📊 예측 착과율 결과: **{predicted:.1f}%**")
     st.info(status_emoji)

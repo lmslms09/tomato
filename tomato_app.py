@@ -80,16 +80,14 @@ if st.button("✨ 토마토야 얼마나 자랄래? 예측해줘! ✨", use_cont
             predicted = (temp * 0.5) + (humidity * 0.3) + 20 
             predicted = min(max(predicted, 0), 100) # 0~100 사이 제한
     
-    # 4. 깜찍한 결과 출력 및 축하 효과
-    st.balloons() # 화면에 풍선이 팡팡 터집니다 🎈
-    
-    # 착과율 수치에 따른 귀여운 코멘트 추가
-    if predicted >= 70:
+  if predicted >= 70:
+        st.balloons() # 🥳 대성공일 때만 풍선이 화면에 팡팡 터집니다 🎈
         status_emoji = "🥳 대성공! 토마토가 주렁주렁 열릴 거예요! 🎉"
     elif predicted >= 40:
         status_emoji = "🌱 오호라! 무럭무럭 잘 자라고 있네요! 👍"
     else:
-        status_emoji = "🥺 힝, 토마토가 조금 힘든가봐요 ㅠㅠ. 조금만 신경 써주세요! 💧"
+        status_emoji = "🥺 힝, 토마토가 조금 춥거나 더운가봐요. 신경 써주세요! 💧"
         
     st.success(f"## 📊 예측 착과율 결과: **{predicted:.1f}%**")
     st.info(status_emoji)
+    

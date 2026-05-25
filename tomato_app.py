@@ -57,7 +57,6 @@ with col1:
 
 with col2:
     humidity = st.slider("💧 촉촉한 습도 (%)", 0.0, 100.0, 60.0, step=1.0)
-    # 빈 공간을 채우거나 데코레이션용 텍스트
     st.write("")
     st.caption("💡 슬라이더를 밀어서 토마토방의 환경을 맞춰주세요!")
 
@@ -80,8 +79,9 @@ if st.button("✨ 토마토야 얼마나 자랄래? 예측해줘! ✨", use_cont
             predicted = (temp * 0.5) + (humidity * 0.3) + 20 
             predicted = min(max(predicted, 0), 100) # 0~100 사이 제한
     
-  if predicted >= 70:
-        st.balloons() # 🥳 대성공일 때만 풍선이 화면에 팡팡 터집니다 🎈
+    # 4. 깜찍한 결과 출력 및 축하 효과 (70% 이상일 때만 풍선 세레머니)
+    if predicted >= 70:
+        st.balloons() 
         status_emoji = "🥳 대성공! 토마토가 주렁주렁 열릴 거예요! 🎉"
     elif predicted >= 40:
         status_emoji = "🌱 오호라! 무럭무럭 잘 자라고 있네요! 👍"
@@ -90,4 +90,3 @@ if st.button("✨ 토마토야 얼마나 자랄래? 예측해줘! ✨", use_cont
         
     st.success(f"## 📊 예측 착과율 결과: **{predicted:.1f}%**")
     st.info(status_emoji)
-    
